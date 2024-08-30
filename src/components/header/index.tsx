@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Header() {
     return (
-        <div className={styles.header}>
+        <header className={styles.header}>
             <nav className={`${styles.nav} container`}>
                 <Link
                     href="/"
@@ -20,6 +20,6 @@ export default function Header() {
                 </Link>
                 <Link href="/login" className={styles.login}>Login / Criar</Link>
             </nav>
-        </div>
+        </header>
     )
 }
