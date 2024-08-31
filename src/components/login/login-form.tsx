@@ -5,6 +5,7 @@ import { login } from "@/src/actions/login";
 import { Button as ButtonForm } from "../forms/button/button";
 import { useFormState, useFormStatus } from "react-dom";
 import { Input } from "../forms/input";
+import { Error } from "../helper/error";
 
 function Button() {
   const { pending } = useFormStatus();
@@ -38,7 +39,7 @@ export function LoginForm() {
         id="password"
         type="password"
       />
-      {state.error ?? ""}
+      <Error errorMessage={state.error} />
       <Button />
     </form>
   )
