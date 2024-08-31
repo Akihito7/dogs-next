@@ -19,7 +19,6 @@ export async function passwordLost(state: {}, formData: FormData) {
       })
     })
     const data = await response.json()
-    console.log(data)
     if (!response.ok) {
       if (data.message) throw new Error(data.message)
       else throw new Error("ERROR INTERNAL SERVER")

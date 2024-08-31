@@ -21,8 +21,7 @@ function Button() {
 export function LostPasswordForm() {
   const [url, setUrl] = useState("");
   useEffect(() => {
-    setUrl(window.location.href.replace("lost-password", "reset"))
-    console.log(window.location.href.replace("lost-password", "reset-password"))
+    setUrl(window.location.href.replace("lost-password", "reset-password"))
   }, []);
 
   const [state, action] = useFormState(passwordLost, {
