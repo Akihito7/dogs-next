@@ -5,6 +5,7 @@ import { Input } from "../forms/input";
 import { Error } from "../helper/error";
 import styles from "./login-form.module.css"
 import { register } from "@/src/actions/register";
+import { useEffect } from "react";
 
 function Button() {
   const { pending } = useFormStatus();
@@ -23,12 +24,16 @@ export function RegisterForm() {
     data: null,
   })
 
+  useEffect(() => {
+    if (state.ok) window.location.href = "/account"
+  }, [state.ok])
+
   return (
     <form action={action} className={styles.form}>
       <Input label="Usuário" name="username" type="text" />
       <Input label="Email" name="email" type="email" />
       <Input label="Senha" name="password" type="password" />
-      {state.error&& <Error errorMessage={state.error} />}
+      {state.error && <Error errorMessage={state.error} />}
       <Button />
     </form>
   )
