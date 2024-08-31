@@ -4,6 +4,7 @@ import styles from "./login-form.module.css"
 import { login } from "@/src/actions/login";
 import { Button as ButtonForm } from "../forms/button/button";
 import { useFormState, useFormStatus } from "react-dom";
+import { Input } from "../forms/input";
 
 function Button() {
   const { pending } = useFormStatus();
@@ -25,19 +26,19 @@ export function LoginForm() {
 
   return (
     <form action={action} className={styles.form}>
-      <input
+      <Input
+        label="Usuário"
         name="username"
         id="username"
         type="text"
       />
-
-      <input
+      <Input
+        label="Senha"
         name="password"
         id="password"
         type="password"
       />
       {state.error ?? ""}
-
       <Button />
     </form>
   )
