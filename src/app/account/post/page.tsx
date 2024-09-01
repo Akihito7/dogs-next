@@ -1,7 +1,9 @@
+import { AccountPhotoPost } from "@/src/components/account/account-photo-post";
+
 export default function AccountPostPage(){
     return (
         <div>
-            <h1>Post</h1>
+            <AccountPhotoPost />
         </div>
     )
 }
